@@ -7,9 +7,13 @@
    <Group
       location = "container:"
       name = "Kits">
-      <FileRef
-         location = "group:DependencyKit/DependencyKit.xcodeproj">
-      </FileRef>
+      <Group
+         location = "container:"
+         name = "DomainKits">
+         <FileRef
+            location = "group:DependencyKit/DependencyKit.xcodeproj">
+         </FileRef>
+      </Group>
    </Group>
    <Group
       location = "container:"
@@ -21,8 +25,12 @@
    <Group
       location = "container:"
       name = "Moduls">
-      <FileRef
-         location = "group:HomeModul/HomeModul.xcodeproj">
-      </FileRef>
+      <Group
+         location = "container:"
+         name = "DomainModuls">
+         <FileRef
+            location = "group:HomeModul/HomeModul.xcodeproj">
+         </FileRef>
+      </Group>
    </Group>
 </Workspace>

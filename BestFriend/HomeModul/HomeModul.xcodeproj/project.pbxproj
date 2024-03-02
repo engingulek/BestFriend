@@ -14,6 +14,10 @@
 		7DB4A0E62B934CB700BE5135 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB4A0E52B934CB700BE5135 /* HomeView.swift */; };
 		7DB4A0E82B934CC800BE5135 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB4A0E72B934CC700BE5135 /* HomeRouter.swift */; };
 		7DB4A0EA2B934CE200BE5135 /* HomeModulInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB4A0E92B934CE200BE5135 /* HomeModulInterface.swift */; };
+		7DB4A0F82B9354AD00BE5135 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7DB4A0F72B9354AD00BE5135 /* Kingfisher */; };
+		7DB4A0FA2B93578700BE5135 /* UpcomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB4A0F92B93578700BE5135 /* UpcomingView.swift */; };
+		7DB4A0FD2B935F7200BE5135 /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB4A0FC2B935F7200BE5135 /* ServicesView.swift */; };
+		7DB4A0FF2B93611500BE5135 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB4A0FE2B93611500BE5135 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +42,9 @@
 		7DB4A0E52B934CB700BE5135 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7DB4A0E72B934CC700BE5135 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		7DB4A0E92B934CE200BE5135 /* HomeModulInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModulInterface.swift; sourceTree = "<group>"; };
+		7DB4A0F92B93578700BE5135 /* UpcomingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingView.swift; sourceTree = "<group>"; };
+		7DB4A0FC2B935F7200BE5135 /* ServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
+		7DB4A0FE2B93611500BE5135 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DB4A0F82B9354AD00BE5135 /* Kingfisher in Frameworks */,
 				7DB4A0E22B934CA600BE5135 /* DependencyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,11 +80,13 @@
 		7DB4A0BC2B934C5A00BE5135 /* HomeModul */ = {
 			isa = PBXGroup;
 			children = (
+				7DB4A0FB2B935F6000BE5135 /* views */,
 				7DB4A0BD2B934C5A00BE5135 /* HomeModul.h */,
 				7DB4A0BE2B934C5A00BE5135 /* HomeModul.docc */,
 				7DB4A0E52B934CB700BE5135 /* HomeView.swift */,
 				7DB4A0E72B934CC700BE5135 /* HomeRouter.swift */,
 				7DB4A0E92B934CE200BE5135 /* HomeModulInterface.swift */,
+				7DB4A0FE2B93611500BE5135 /* Assets.xcassets */,
 			);
 			path = HomeModul;
 			sourceTree = "<group>";
@@ -87,6 +97,15 @@
 				7DB4A0E12B934CA600BE5135 /* DependencyKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DB4A0FB2B935F6000BE5135 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				7DB4A0F92B93578700BE5135 /* UpcomingView.swift */,
+				7DB4A0FC2B935F7200BE5135 /* ServicesView.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +137,9 @@
 			dependencies = (
 			);
 			name = HomeModul;
+			packageProductDependencies = (
+				7DB4A0F72B9354AD00BE5135 /* Kingfisher */,
+			);
 			productName = HomeModul;
 			productReference = 7DB4A0BA2B934C5A00BE5135 /* HomeModul.framework */;
 			productType = "com.apple.product-type.framework";
@@ -145,6 +167,9 @@
 				Base,
 			);
 			mainGroup = 7DB4A0B02B934C5A00BE5135;
+			packageReferences = (
+				7DB4A0F62B9354AD00BE5135 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 7DB4A0BB2B934C5A00BE5135 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -159,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DB4A0FF2B93611500BE5135 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +197,9 @@
 			files = (
 				7DB4A0BF2B934C5A00BE5135 /* HomeModul.docc in Sources */,
 				7DB4A0E82B934CC800BE5135 /* HomeRouter.swift in Sources */,
+				7DB4A0FD2B935F7200BE5135 /* ServicesView.swift in Sources */,
 				7DB4A0EA2B934CE200BE5135 /* HomeModulInterface.swift in Sources */,
+				7DB4A0FA2B93578700BE5135 /* UpcomingView.swift in Sources */,
 				7DB4A0E62B934CB700BE5135 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +416,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7DB4A0F62B9354AD00BE5135 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7DB4A0F72B9354AD00BE5135 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DB4A0F62B9354AD00BE5135 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7DB4A0B12B934C5A00BE5135 /* Project object */;
 }
