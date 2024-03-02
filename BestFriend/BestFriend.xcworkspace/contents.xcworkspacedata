@@ -19,6 +19,9 @@
       location = "container:"
       name = "Apps">
       <FileRef
+         location = "group:AdvertDetail/AdvertDetail.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:Advert/Advert.xcodeproj">
       </FileRef>
       <FileRef
@@ -38,6 +41,9 @@
       <Group
          location = "container:"
          name = "DomainModuls">
+         <FileRef
+            location = "group:AdvertDetailModul/AdvertDetailModul.xcodeproj">
+         </FileRef>
          <FileRef
             location = "group:HomeModul/HomeModul.xcodeproj">
          </FileRef>
