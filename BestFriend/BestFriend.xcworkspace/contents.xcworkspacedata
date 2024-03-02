@@ -4,4 +4,25 @@
    <FileRef
       location = "group:BestFriend/BestFriend.xcodeproj">
    </FileRef>
+   <Group
+      location = "container:"
+      name = "Kits">
+      <FileRef
+         location = "group:DependencyKit/DependencyKit.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "Apps">
+      <FileRef
+         location = "group:Home/Home.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "Moduls">
+      <FileRef
+         location = "group:HomeModul/HomeModul.xcodeproj">
+      </FileRef>
+   </Group>
 </Workspace>
