@@ -1,20 +1,20 @@
-import SwiftUI
 import DependencyKit
 import HomeModul
-
+import SwiftUI
 
 @main
-struct BestFriendApp: App {
+struct HomeApp: App {
     var body: some Scene {
         WindowGroup {
             AnyView(register())
         }
     }
-     
+    
     func register() -> any View {
-        let dependenyRegister = DependencyRegister()
-        dependenyRegister.register()
+        let dependencyRegister = DependencyEngine.shared
+        dependencyRegister.register(value: HomeRouter(), for: HomeModulInterface.self)
         @Dependency var homeModule : HomeModulInterface
         return homeModule.createView()
+        
     }
 }
