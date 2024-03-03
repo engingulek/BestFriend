@@ -11,8 +11,8 @@ struct AdvertsView: View {
                 subtitle: viewModel.subtitle)
             ScrollView {
                 LazyVStack(content: {
-                    ForEach(1...10, id: \.self) { count in
-                        AdvertLazyVStackTitle()
+                    ForEach(viewModel.adverts, id: \.id) { advert in
+                        AdvertLazyVStackTitle(advert: advert)
                     }
                 })
             }
