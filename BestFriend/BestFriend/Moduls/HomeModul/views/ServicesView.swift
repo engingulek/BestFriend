@@ -9,13 +9,13 @@ struct ServicesView: View {
                 .font(.callout)
             HStack {
                 NavigationLink {
-                    AdvertsView()
+                    AdvertsView(advertType: .walking)
                 } label: {
                     serviceRectangle(.leash,TextConstants.walking.rawValue)
                 }
                 
                 NavigationLink {
-                    AdvertsView()
+                    AdvertsView(advertType: .sitting)
                 } label: {
                     serviceRectangle(.animalCare,TextConstants.sitting.rawValue)
                 }

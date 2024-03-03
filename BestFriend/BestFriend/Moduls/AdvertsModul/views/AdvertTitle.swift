@@ -1,13 +1,15 @@
 import SwiftUI
 
 struct AdvertHeader: View {
+    let title:String
+    let subtitle:String
     var body: some View {
         HStack{
             VStack(alignment:.leading){
-                Text("Pick Your Dog Walker")
+                Text(title)
                     .font(.title2)
                     .fontWeight(.semibold)
-                Text("24 Dow Walkers want to help you")
+                Text(subtitle)
             }
             Spacer()
             Image(systemName: ImageResourceConstants.slider.rawValue)
@@ -17,6 +19,6 @@ struct AdvertHeader: View {
 }
 
 #Preview {
-    AdvertHeader()
+    AdvertHeader(title: "", subtitle: "")
        
 }

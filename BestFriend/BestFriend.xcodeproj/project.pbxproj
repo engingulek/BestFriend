@@ -21,6 +21,7 @@
 		7D339FB92B94AA1B0097772F /* CommentLaztVStackTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D339FB82B94AA1B0097772F /* CommentLaztVStackTitle.swift */; };
 		7D339FBC2B94ACCF0097772F /* TextConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D339FBB2B94ACCF0097772F /* TextConstants.swift */; };
 		7D339FBE2B94ADA00097772F /* ImageResourceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D339FBD2B94ADA00097772F /* ImageResourceConstants.swift */; };
+		7D339FC02B94B3780097772F /* AdvertsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D339FBF2B94B3770097772F /* AdvertsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		7D339FB82B94AA1B0097772F /* CommentLaztVStackTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentLaztVStackTitle.swift; sourceTree = "<group>"; };
 		7D339FBB2B94ACCF0097772F /* TextConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextConstants.swift; path = ../../../../../TextConstants.swift; sourceTree = "<group>"; };
 		7D339FBD2B94ADA00097772F /* ImageResourceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageResourceConstants.swift; path = ../../../../../ImageResourceConstants.swift; sourceTree = "<group>"; };
+		7D339FBF2B94B3770097772F /* AdvertsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdvertsViewModel.swift; path = ../../../../../../AdvertsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				7D339FAD2B94A96F0097772F /* views */,
 				7D339FB22B94A9C20097772F /* AdvertsView.swift */,
+				7D339FBF2B94B3770097772F /* AdvertsViewModel.swift */,
 			);
 			path = AdvertsModul;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			files = (
 				7D339FB12B94A99A0097772F /* AdvertLazyVStackTitle.swift in Sources */,
 				7D339FAB2B94A9180097772F /* ServicesView.swift in Sources */,
+				7D339FC02B94B3780097772F /* AdvertsViewModel.swift in Sources */,
 				7D339F932B94A85A0097772F /* BestFriendApp.swift in Sources */,
 				7D339FA32B94A8AB0097772F /* HomeView.swift in Sources */,
 				7D339FAF2B94A9800097772F /* AdvertTitle.swift in Sources */,
