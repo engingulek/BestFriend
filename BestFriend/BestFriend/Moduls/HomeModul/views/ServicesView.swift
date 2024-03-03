@@ -4,25 +4,21 @@ import SwiftUI
 struct ServicesView: View {
     var body: some View {
         VStack{
-            Text("Services")
+            Text(TextConstants.services.rawValue)
                 .fontWeight(.semibold)
                 .font(.callout)
             HStack {
                 NavigationLink {
-                    
+                    AdvertsView()
                 } label: {
-                    serviceRectangle(.leash,"Walking")
+                    serviceRectangle(.leash,TextConstants.walking.rawValue)
                 }
                 
                 NavigationLink {
-                    
+                    AdvertsView()
                 } label: {
-                    serviceRectangle(.animalCare,"Sitting")
+                    serviceRectangle(.animalCare,TextConstants.sitting.rawValue)
                 }
-
-                
-               
-                
             }
         }
     }

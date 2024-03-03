@@ -19,6 +19,8 @@
 		7D339FB32B94A9C20097772F /* AdvertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D339FB22B94A9C20097772F /* AdvertsView.swift */; };
 		7D339FB62B94A9FF0097772F /* AdvertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D339FB52B94A9FF0097772F /* AdvertDetailView.swift */; };
 		7D339FB92B94AA1B0097772F /* CommentLaztVStackTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D339FB82B94AA1B0097772F /* CommentLaztVStackTitle.swift */; };
+		7D339FBC2B94ACCF0097772F /* TextConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D339FBB2B94ACCF0097772F /* TextConstants.swift */; };
+		7D339FBE2B94ADA00097772F /* ImageResourceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D339FBD2B94ADA00097772F /* ImageResourceConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		7D339FB22B94A9C20097772F /* AdvertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertsView.swift; sourceTree = "<group>"; };
 		7D339FB52B94A9FF0097772F /* AdvertDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertDetailView.swift; sourceTree = "<group>"; };
 		7D339FB82B94AA1B0097772F /* CommentLaztVStackTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentLaztVStackTitle.swift; sourceTree = "<group>"; };
+		7D339FBB2B94ACCF0097772F /* TextConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextConstants.swift; path = ../../../../../TextConstants.swift; sourceTree = "<group>"; };
+		7D339FBD2B94ADA00097772F /* ImageResourceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageResourceConstants.swift; path = ../../../../../ImageResourceConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 		7D339F912B94A85A0097772F /* BestFriend */ = {
 			isa = PBXGroup;
 			children = (
+				7D339FBA2B94AC950097772F /* Constants */,
 				7D339FA02B94A88B0097772F /* Moduls */,
 				7D339F922B94A85A0097772F /* BestFriendApp.swift */,
 				7D339F962B94A85C0097772F /* Assets.xcassets */,
@@ -144,6 +149,15 @@
 				7D339FB82B94AA1B0097772F /* CommentLaztVStackTitle.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		7D339FBA2B94AC950097772F /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				7D339FBB2B94ACCF0097772F /* TextConstants.swift */,
+				7D339FBD2B94ADA00097772F /* ImageResourceConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,8 +242,10 @@
 				7D339FA32B94A8AB0097772F /* HomeView.swift in Sources */,
 				7D339FAF2B94A9800097772F /* AdvertTitle.swift in Sources */,
 				7D339FB62B94A9FF0097772F /* AdvertDetailView.swift in Sources */,
+				7D339FBE2B94ADA00097772F /* ImageResourceConstants.swift in Sources */,
 				7D339FB92B94AA1B0097772F /* CommentLaztVStackTitle.swift in Sources */,
 				7D339FA92B94A8EE0097772F /* UpcomingView.swift in Sources */,
+				7D339FBC2B94ACCF0097772F /* TextConstants.swift in Sources */,
 				7D339FB32B94A9C20097772F /* AdvertsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

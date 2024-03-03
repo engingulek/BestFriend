@@ -14,7 +14,7 @@ struct AdvertDetailView: View {
                         .font(.title)
                         .fontWeight(.semibold)
                     HStack(spacing:1,content: {
-                        Image(systemName: "star.fill")
+                        Image(systemName: ImageResourceConstants.starFill.rawValue)
                             .foregroundColor(.black)
                         Text("4.5")
                             .fontWeight(.semibold)
@@ -23,22 +23,22 @@ struct AdvertDetailView: View {
                 })
                 
                 HStack(content: {
-                    Image(systemName: "mappin.and.ellipse")
+                    Image(systemName: ImageResourceConstants.mappinAndEllipse.rawValue)
                     Text("Bakırköy,Istanbul")
                 })
                 
                 HStack{
                    Spacer()
-                    subWalkerInfo(count: "60", text: "Reviews")
+                    subWalkerInfo(count: "60", text: TextConstants.reviews.rawValue)
                     Spacer()
-                    subWalkerInfo(count: "150", text: "Walks")
+                    subWalkerInfo(count: "150", text: TextConstants.walks.rawValue)
                     Spacer()
-                    subWalkerInfo(count: "$23", text:"per hour" )
+                    subWalkerInfo(count: "$23", text:TextConstants.perHour.rawValue )
                     Spacer()
                 }
                 
                 VStack(alignment:.leading,content: {
-                    Text("Bio")
+                    Text(TextConstants.bio.rawValue)
                         .font(.title2)
                         .fontWeight(.semibold)
                     Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic ")
@@ -46,7 +46,7 @@ struct AdvertDetailView: View {
                 })
              
                 VStack(alignment:.leading,content: {
-                    Text("Comments")
+                    Text( TextConstants.comments.rawValue)
                         .font(.title2)
                         .fontWeight(.semibold)
                     ScrollView {

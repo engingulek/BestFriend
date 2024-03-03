@@ -4,7 +4,7 @@ import SwiftUI
 struct UpcomingView : View {
     var body: some View {
         VStack {
-            Text("Upcoming")
+            Text(TextConstants.upcoming.rawValue)
                 .fontWeight(.semibold)
                 .font(.callout)
             Rectangle()
@@ -22,8 +22,8 @@ struct UpcomingView : View {
                         VStack{
                             Text("Matthew Thomas")
                                 .foregroundColor(.white)
-                            textWithIcon(imageText: "calendar", text: "Friday,July 20")
-                            textWithIcon(imageText: "clock", text: "12 pm - 2 pm")
+                            textWithIcon(imageText: ImageResourceConstants.calendar.rawValue, text: "Friday,July 20")
+                            textWithIcon(imageText: ImageResourceConstants.clock.rawValue, text: "12 pm - 2 pm")
                             
                         }
                     }

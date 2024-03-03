@@ -10,7 +10,7 @@ struct AdvertHeader: View {
                 Text("24 Dow Walkers want to help you")
             }
             Spacer()
-            Image(systemName: "slider.horizontal.3")
+            Image(systemName: ImageResourceConstants.slider.rawValue)
                 .font(.title2)
         }.padding()
     }
