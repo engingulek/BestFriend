@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		7D1C70E02B94D14B00394AE5 /* AdvertsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1C70DF2B94D14B00394AE5 /* AdvertsService.swift */; };
 		7D1C70E22B94D15300394AE5 /* Advert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1C70E12B94D15300394AE5 /* Advert.swift */; };
+		7D1C70E62B94F28B00394AE5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7D1C70E52B94F28B00394AE5 /* Alamofire */; };
+		7D1C70E82B94F2F100394AE5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1C70E72B94F2F100394AE5 /* NetworkManager.swift */; };
+		7D1C70EA2B94F33C00394AE5 /* NetworkPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1C70E92B94F33C00394AE5 /* NetworkPath.swift */; };
+		7D1C70EE2B94F38F00394AE5 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1C70ED2B94F38F00394AE5 /* TargetType.swift */; };
+		7D1C70F02B94F69300394AE5 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1C70EF2B94F69300394AE5 /* NetworkConstants.swift */; };
 		7D339F932B94A85A0097772F /* BestFriendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D339F922B94A85A0097772F /* BestFriendApp.swift */; };
 		7D339F972B94A85C0097772F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D339F962B94A85C0097772F /* Assets.xcassets */; };
 		7D339F9A2B94A85C0097772F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D339F992B94A85C0097772F /* Preview Assets.xcassets */; };
@@ -29,6 +34,10 @@
 /* Begin PBXFileReference section */
 		7D1C70DF2B94D14B00394AE5 /* AdvertsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertsService.swift; sourceTree = "<group>"; };
 		7D1C70E12B94D15300394AE5 /* Advert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advert.swift; sourceTree = "<group>"; };
+		7D1C70E72B94F2F100394AE5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7D1C70E92B94F33C00394AE5 /* NetworkPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPath.swift; sourceTree = "<group>"; };
+		7D1C70ED2B94F38F00394AE5 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		7D1C70EF2B94F69300394AE5 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		7D339F8F2B94A85A0097772F /* BestFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D339F922B94A85A0097772F /* BestFriendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestFriendApp.swift; sourceTree = "<group>"; };
 		7D339F962B94A85C0097772F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,12 +61,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D339FA62B94A8C40097772F /* Kingfisher in Frameworks */,
+				7D1C70E62B94F28B00394AE5 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D1C70E32B94F23A00394AE5 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7D1C70F12B94F6B500394AE5 /* Network */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		7D1C70F12B94F6B500394AE5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7D1C70E72B94F2F100394AE5 /* NetworkManager.swift */,
+				7D1C70E92B94F33C00394AE5 /* NetworkPath.swift */,
+				7D1C70ED2B94F38F00394AE5 /* TargetType.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		7D339F862B94A85A0097772F = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +105,7 @@
 		7D339F912B94A85A0097772F /* BestFriend */ = {
 			isa = PBXGroup;
 			children = (
+				7D1C70E32B94F23A00394AE5 /* Manager */,
 				7D339FBA2B94AC950097772F /* Constants */,
 				7D339FA02B94A88B0097772F /* Moduls */,
 				7D339F922B94A85A0097772F /* BestFriendApp.swift */,
@@ -163,6 +192,7 @@
 		7D339FBA2B94AC950097772F /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				7D1C70EF2B94F69300394AE5 /* NetworkConstants.swift */,
 				7D339FBB2B94ACCF0097772F /* TextConstants.swift */,
 				7D339FBD2B94ADA00097772F /* ImageResourceConstants.swift */,
 			);
@@ -187,6 +217,7 @@
 			name = BestFriend;
 			packageProductDependencies = (
 				7D339FA52B94A8C40097772F /* Kingfisher */,
+				7D1C70E52B94F28B00394AE5 /* Alamofire */,
 			);
 			productName = BestFriend;
 			productReference = 7D339F8F2B94A85A0097772F /* BestFriend.app */;
@@ -218,6 +249,7 @@
 			mainGroup = 7D339F862B94A85A0097772F;
 			packageReferences = (
 				7D339FA42B94A8C40097772F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				7D1C70E42B94F28B00394AE5 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 7D339F902B94A85A0097772F /* Products */;
 			projectDirPath = "";
@@ -245,15 +277,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D1C70F02B94F69300394AE5 /* NetworkConstants.swift in Sources */,
 				7D1C70E02B94D14B00394AE5 /* AdvertsService.swift in Sources */,
 				7D339FB12B94A99A0097772F /* AdvertLazyVStackTitle.swift in Sources */,
 				7D339FAB2B94A9180097772F /* ServicesView.swift in Sources */,
+				7D1C70EA2B94F33C00394AE5 /* NetworkPath.swift in Sources */,
 				7D339FC02B94B3780097772F /* AdvertsViewModel.swift in Sources */,
 				7D339F932B94A85A0097772F /* BestFriendApp.swift in Sources */,
 				7D339FA32B94A8AB0097772F /* HomeView.swift in Sources */,
 				7D339FAF2B94A9800097772F /* AdvertTitle.swift in Sources */,
 				7D1C70E22B94D15300394AE5 /* Advert.swift in Sources */,
+				7D1C70E82B94F2F100394AE5 /* NetworkManager.swift in Sources */,
 				7D339FB62B94A9FF0097772F /* AdvertDetailView.swift in Sources */,
+				7D1C70EE2B94F38F00394AE5 /* TargetType.swift in Sources */,
 				7D339FBE2B94ADA00097772F /* ImageResourceConstants.swift in Sources */,
 				7D339FB92B94AA1B0097772F /* CommentLaztVStackTitle.swift in Sources */,
 				7D339FA92B94A8EE0097772F /* UpcomingView.swift in Sources */,
@@ -466,6 +502,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7D1C70E42B94F28B00394AE5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
 		7D339FA42B94A8C40097772F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -477,6 +521,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7D1C70E52B94F28B00394AE5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D1C70E42B94F28B00394AE5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		7D339FA52B94A8C40097772F /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7D339FA42B94A8C40097772F /* XCRemoteSwiftPackageReference "Kingfisher" */;
