@@ -1,10 +1,10 @@
 import SwiftUI
 import Kingfisher
 struct AdvertLazyVStackTitle: View {
-    let advert : Advert
+    let item : (key:String,advert:AdvertValue)
     var body: some View {
         HStack(content: {
-            KFImage(URL(string: advert.imageUrl))
+            KFImage(URL(string: item.advert.imageURL))
                 .resizable()
                 .frame(width: 130,height: 170)
                 .cornerRadius(10)
@@ -12,24 +12,24 @@ struct AdvertLazyVStackTitle: View {
             VStack(alignment:.leading,
                    spacing: 10,
                    content: {
-                Text(advert.nameSurname)
+                Text(item.advert.nameSurname)
                     .font(.title2)
                     .fontWeight(.semibold)
                 
                 HStack(content: {
                     Image(systemName: ImageResourceConstants.mappinAndEllipse.rawValue)
-                    Text("\(advert.locationInfo.district),\(advert.locationInfo.city)")
+                    Text("\(item.advert.locationInfo.district),\(item.advert.locationInfo.city)")
                 })
                 
                 HStack(alignment:.center) {
                     
                     subWalkerInfo(image: ImageResourceConstants.starFill.rawValue, text: "4.5")
                     //subWalkerInfo(image: ImageResourceConstants.walk.rawValue , text: "50 walks")
-                    subWalkerInfo(image: ImageResourceConstants.dollarsign.rawValue, text: "\(advert.perWage)/h")
+                    subWalkerInfo(image: ImageResourceConstants.dollarsign.rawValue, text: "\(item.advert.perWage)/h")
                     
                 }
                 
-                Text(advert.info)
+                Text(item.advert.info)
                     .font(.callout)
                     .lineLimit(3)
             })
@@ -52,6 +52,6 @@ private struct subWalkerInfo : View {
     }
 }
 
-#Preview {
+/*#Preview {
     AdvertLazyVStackTitle(advert: Advert.defaultAdvert)
-}
+}*/

@@ -9,19 +9,19 @@ enum NetworkError : Error {
     case noRequestResource
 }
 
-public protocol NetworkManagerProtocol{
-    func request<T:Codable>(
+ protocol NetworkManagerProtocol{
+    func request<T:Decodable>(
         target:NetworkPath,
         responseClass:T.Type) async throws -> T
 }
 
-public final class NetworkManager : NetworkManagerProtocol  {
+final class NetworkManager : NetworkManagerProtocol  {
     
-    public static let shared :NetworkManagerProtocol  = NetworkManager()
+    static let shared :NetworkManagerProtocol  = NetworkManager()
     
     init() {}
     
-    public func request<T:Codable>(
+   func request<T:Decodable>(
         target: NetworkPath,
         responseClass: T.Type) async throws -> T  {
             
