@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D1C70E02B94D14B00394AE5 /* AdvertsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1C70DF2B94D14B00394AE5 /* AdvertsService.swift */; };
+		7D1C70E22B94D15300394AE5 /* Advert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1C70E12B94D15300394AE5 /* Advert.swift */; };
 		7D339F932B94A85A0097772F /* BestFriendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D339F922B94A85A0097772F /* BestFriendApp.swift */; };
 		7D339F972B94A85C0097772F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D339F962B94A85C0097772F /* Assets.xcassets */; };
 		7D339F9A2B94A85C0097772F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D339F992B94A85C0097772F /* Preview Assets.xcassets */; };
@@ -21,9 +23,12 @@
 		7D339FB92B94AA1B0097772F /* CommentLaztVStackTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D339FB82B94AA1B0097772F /* CommentLaztVStackTitle.swift */; };
 		7D339FBC2B94ACCF0097772F /* TextConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D339FBB2B94ACCF0097772F /* TextConstants.swift */; };
 		7D339FBE2B94ADA00097772F /* ImageResourceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D339FBD2B94ADA00097772F /* ImageResourceConstants.swift */; };
+		7D339FC02B94B3780097772F /* AdvertsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D339FBF2B94B3770097772F /* AdvertsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D1C70DF2B94D14B00394AE5 /* AdvertsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertsService.swift; sourceTree = "<group>"; };
+		7D1C70E12B94D15300394AE5 /* Advert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advert.swift; sourceTree = "<group>"; };
 		7D339F8F2B94A85A0097772F /* BestFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D339F922B94A85A0097772F /* BestFriendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestFriendApp.swift; sourceTree = "<group>"; };
 		7D339F962B94A85C0097772F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +43,7 @@
 		7D339FB82B94AA1B0097772F /* CommentLaztVStackTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentLaztVStackTitle.swift; sourceTree = "<group>"; };
 		7D339FBB2B94ACCF0097772F /* TextConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextConstants.swift; path = ../../../../../TextConstants.swift; sourceTree = "<group>"; };
 		7D339FBD2B94ADA00097772F /* ImageResourceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageResourceConstants.swift; path = ../../../../../ImageResourceConstants.swift; sourceTree = "<group>"; };
+		7D339FBF2B94B3770097772F /* AdvertsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdvertsViewModel.swift; path = ../../../../../../AdvertsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,9 @@
 			children = (
 				7D339FAD2B94A96F0097772F /* views */,
 				7D339FB22B94A9C20097772F /* AdvertsView.swift */,
+				7D339FBF2B94B3770097772F /* AdvertsViewModel.swift */,
+				7D1C70DF2B94D14B00394AE5 /* AdvertsService.swift */,
+				7D1C70E12B94D15300394AE5 /* Advert.swift */,
 			);
 			path = AdvertsModul;
 			sourceTree = "<group>";
@@ -236,11 +245,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D1C70E02B94D14B00394AE5 /* AdvertsService.swift in Sources */,
 				7D339FB12B94A99A0097772F /* AdvertLazyVStackTitle.swift in Sources */,
 				7D339FAB2B94A9180097772F /* ServicesView.swift in Sources */,
+				7D339FC02B94B3780097772F /* AdvertsViewModel.swift in Sources */,
 				7D339F932B94A85A0097772F /* BestFriendApp.swift in Sources */,
 				7D339FA32B94A8AB0097772F /* HomeView.swift in Sources */,
 				7D339FAF2B94A9800097772F /* AdvertTitle.swift in Sources */,
+				7D1C70E22B94D15300394AE5 /* Advert.swift in Sources */,
 				7D339FB62B94A9FF0097772F /* AdvertDetailView.swift in Sources */,
 				7D339FBE2B94ADA00097772F /* ImageResourceConstants.swift in Sources */,
 				7D339FB92B94AA1B0097772F /* CommentLaztVStackTitle.swift in Sources */,
