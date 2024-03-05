@@ -5,6 +5,7 @@ struct AdvertsView: View {
 
     @ObservedObject private  var viewModel = AdvertsViewModel()
     
+    
     var body: some View {
         VStack {
             if viewModel.isLoading {
@@ -17,21 +18,33 @@ struct AdvertsView: View {
                 VStack {
                     AdvertHeader(
                         title: viewModel.title,
-                        subtitle: "\(viewModel.adverts.count) \(viewModel.subtitle)")
-                    ScrollView {
-                        LazyVStack(content: {
-                            ForEach(viewModel.adverts.sorted(by: {$0.key < $1.key}),id: \.key) { (key, advert) in
-                                AdvertLazyVStackTitle(item: (key: key, advert: advert))
-                            }
+                        subtitle: "\(viewModel.advertList.count) \(viewModel.subtitle)",viewModel: viewModel)
+                    if viewModel.message.isEmpty {
+                        ScrollView {
+                            LazyVStack(content: {
+                                ForEach(viewModel.advertList,id: \.key) { (key, advert) in
+                                    AdvertLazyVStackTitle(item: (key: key, advert: advert))
+                                }
+                            })
+                        }
+                    }else{
+                        VStack(content: {
+                            Spacer()
+                            Text(viewModel.message)
+                                .font(.title2)
+                            Spacer()
                         })
                     }
+                  
                 }
             }
         }
         .navigationTitle(TextConstants.navTitleAdverts.rawValue)
+        
         .onAppear {
-               viewModel.fetchData(advertType:advertType)
-               viewModel.onAppear(advertType: advertType)
+            viewModel.fetchData(advertType: advertType)
+            viewModel.onAppear(advertType: advertType)
+            
             
         }
     }
