@@ -22,7 +22,7 @@ struct AdvertsView: View {
                     if viewModel.message.isEmpty {
                         ScrollView {
                             LazyVStack(content: {
-                                ForEach(viewModel.advertList.sorted(by: {$0.key < $1.key}),id: \.key) { (key, advert) in
+                                ForEach(viewModel.advertList,id: \.key) { (key, advert) in
                                     AdvertLazyVStackTitle(item: (key: key, advert: advert))
                                 }
                             })

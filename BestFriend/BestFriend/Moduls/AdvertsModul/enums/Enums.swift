@@ -10,7 +10,7 @@ enum SortType:String , CaseIterable {
     case lowestPrice = "Lowest Price"
     case highestPrice = "Highest Price"
     case highestRating = "Highest Rating"
-    case lowestRating = "lowest Rating"
+    case lowestRating = "Lowest Rating"
 }
 
 enum CityType : String,CaseIterable {

@@ -2,10 +2,8 @@ import Foundation
 
 
 // MARK: - AdvertValue
-struct AdvertValue: Decodable,Equatable {
-    static func == (lhs: AdvertValue, rhs: AdvertValue) -> Bool {
-        return true
-    }
+struct AdvertValue: Decodable {
+ 
     
     let imageURL: String
     let info: String
