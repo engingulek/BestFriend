@@ -8,12 +8,12 @@ struct AdvertDetailView: View {
     
     var body: some View {
         ScrollView {
-            VStack(alignment:.leading,spacing: 15){
+            VStack(alignment:.leading,spacing: SpacingConstants.medium.rawValue){
                 KFImage(URL(string: item.advert.imageURL))
                     .resizable()
                     .frame(maxWidth: .infinity)
                     .frame(height: UIScreen.main.bounds.height / 3)
-                    .cornerRadius(10)
+                    .cornerRadius(RadiusConstant.small.rawValue)
                 
                 HStack(content: {
                     Text(item.advert.nameSurname)
@@ -81,7 +81,7 @@ struct AdvertDetailView: View {
                             }
                         
                         ScrollView {
-                            LazyVStack(spacing:20,content: {
+                            LazyVStack(spacing:SpacingConstants.large.rawValue,content: {
                                 ForEach(viewModel.commentList, id: \.key) { (key,commentValue) in
                                     CommentLaztVStackTitle(item: (key: key, comment: commentValue))
                                       
@@ -117,7 +117,7 @@ private struct subWalkerInfo : View {
         .frame(width: 80,height: 80)
         .padding(2)
         .background(Color.gray.opacity(0.3))
-            .cornerRadius(10)
+            .cornerRadius(RadiusConstant.small.rawValue)
     }
 }
 

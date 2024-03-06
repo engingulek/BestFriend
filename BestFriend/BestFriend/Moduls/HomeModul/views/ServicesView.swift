@@ -34,11 +34,11 @@ private struct serviceRectangle : View {
     var body: some View {
         Rectangle()
         .fill(Color.red)
-        .cornerRadius(10)
+        .cornerRadius(RadiusConstant.small.rawValue)
         .frame(
             width: 150, height: 150)
         .overlay {
-            VStack(spacing:20) {
+            VStack(spacing:SpacingConstants.large.rawValue) {
                 Image(image)
                     .resizable()
                     .frame(width: 50,height: 50)

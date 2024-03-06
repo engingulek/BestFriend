@@ -9,14 +9,14 @@ struct UpcomingView : View {
                 .font(.callout)
             Rectangle()
                 .fill(Color.red)
-                .cornerRadius(10)
+                .cornerRadius(RadiusConstant.small.rawValue)
                 .frame(
                     width: 200, height: 200)
                 .overlay {
                     VStack {
                         KFImage(URL(string: "https://images.pexels.com/photos/1073097/pexels-photo-1073097.jpeg?auto=compress&cs=tinysrgb&w=1200")!)
                             .resizable()
-                            .cornerRadius(10)
+                            .cornerRadius(RadiusConstant.small.rawValue)
                             .frame(width: 80,height: 80)
                        
                         VStack{

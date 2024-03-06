@@ -7,10 +7,10 @@ struct AdvertLazyVStackTitle: View {
             KFImage(URL(string: item.advert.imageURL))
                 .resizable()
                 .frame(width: 130,height: 170)
-                .cornerRadius(10)
+                .cornerRadius(RadiusConstant.small.rawValue)
             
             VStack(alignment:.leading,
-                   spacing: 10,
+                   spacing: SpacingConstants.small.rawValue,
                    content: {
                 Text(item.advert.nameSurname)
                     .font(.title2)
@@ -53,6 +53,6 @@ private struct subWalkerInfo : View {
     }
 }
 
-/*#Preview {
-    AdvertLazyVStackTitle(advert: Advert.defaultAdvert)
-}*/
+#Preview {
+    AdvertLazyVStackTitle(item: (key:"key",advert:AdvertValue.defaultAdvertValue))
+}
