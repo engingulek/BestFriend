@@ -2,29 +2,33 @@
 import SwiftUI
 import Kingfisher
 struct CommentLaztVStackTitle: View {
+    var item : (key:String,comment:CommentValue)
     var body: some View {
-        VStack(alignment:.leading,content: {
+        VStack(alignment:.leading, content: {
             HStack(content: {
-                KFImage(URL(string: "https://images.pexels.com/photos/868113/pexels-photo-868113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"))
+                KFImage(URL(string: item.comment.userImageURL))
                     .resizable()
-                    .frame(width: 50,height:  50)
+                    .frame(width: 50, height: 50)
                     .clipShape(Circle())
                 VStack(alignment:.leading){
-                    Text("Name Surname")
+                    Text(item.comment.userName)
                         .font(.callout)
                         .fontWeight(.semibold)
-                    Text("04/03/2024")
+                    Text(item.comment.date)
                 }
-                
             })
-            Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to")
+            .frame(maxWidth: .infinity)
+            Text(item.comment.comment)
         })
         .padding()
-        .background(Color.gray.opacity(0.5))
-            .cornerRadius(10)
+        .background(Color.gray.opacity(0.3))
+        .cornerRadius(10)
+     
+
+            
     }
 }
 
 #Preview {
-    CommentLaztVStackTitle()
+    CommentLaztVStackTitle(item: (key: "key", comment: CommentValue.defaultcommnetValue))
 }

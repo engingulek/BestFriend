@@ -1,7 +1,7 @@
 import Foundation
 
 // MARK: - WelcomeValue
-struct CommmentValue: Codable {
+struct CommentValue: Codable {
     let comment, date: String
     let userImageURL: String
     let userName: String
@@ -11,6 +11,8 @@ struct CommmentValue: Codable {
         case userImageURL = "userImageUrl"
         case userName
     }
+    
+    static let defaultcommnetValue : CommentValue = .init(comment: "", date: "", userImageURL: "", userName: "")
 }
 
-typealias CommentResult = [String:  CommmentValue]
+typealias CommentResult = [String:  CommentValue]

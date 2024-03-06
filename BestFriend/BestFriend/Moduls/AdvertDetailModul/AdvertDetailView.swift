@@ -8,7 +8,8 @@ struct AdvertDetailView: View {
             VStack(alignment:.leading,spacing: 15){
                 KFImage(URL(string: item.advert.imageURL))
                     .resizable()
-                    .frame(width: 350,height: 400)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: UIScreen.main.bounds.height / 3)
                     .cornerRadius(10)
                 
                 HStack(content: {
@@ -51,18 +52,29 @@ struct AdvertDetailView: View {
                     Text( TextConstants.comments.rawValue)
                         .font(.title2)
                         .fontWeight(.semibold)
-                    ScrollView {
-                        LazyVStack(spacing:20,content: {
-                            ForEach(1...10, id: \.self) { count in
-                                CommentLaztVStackTitle()
-                                  
-                            }
-                        })
+                    if viewModel.comments.isEmpty {
+                        VStack {
+                            Spacer()
+                            Text(viewModel.message)
+                                .font(.title3)
+                        }
+                    }else{
+                        ScrollView {
+                            LazyVStack(spacing:20,content: {
+                                ForEach(viewModel.comments, id: \.key) { (key,commentValue) in
+                                    CommentLaztVStackTitle(item: (key: key, comment: commentValue))
+                                      
+                                }
+                            })
+                        }
                     }
+                   
                 })
             }.padding(.horizontal)
             
-        }.onAppear {
+        }
+        .navigationTitle(TextConstants.navTitleAdvertDetail.rawValue)
+        .onAppear {
             viewModel.onAppear(advertId: item.key)
         }
      

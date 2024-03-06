@@ -1,7 +1,7 @@
 import Foundation
 
 class AdvertDetailViewModel : ObservableObject{
-    @Published var comments : [(key:String,value:CommmentValue)] = []
+    @Published var comments : [(key:String,value:CommentValue)] = []
     
     @Published var message: String = ""
     private let service : AdvertDetailServiceProtocol
@@ -23,16 +23,17 @@ class AdvertDetailViewModel : ObservableObject{
                let result = try await service.fetchComments(advertId: advertId)
                DispatchQueue.main.async { [weak self] in
                    guard let self = self else {return}
-                   if result.isEmpty {
+                   guard let result else {
                        comments = []
                        message = TextConstants.noCommentForAdvert.rawValue
-                   }else{
-                       for (key,value) in result {
-                           comments.append((key,value))
-                           message = ""
-                           
-                       }
+                       return}
+                   for (key,value) in result {
+                       comments.append((key,value))
+                       comments = comments.sorted(by: {$0.key < $1.key})
+                       message = ""
+                       
                    }
+                  
                }
 
            }catch{
