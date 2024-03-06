@@ -33,12 +33,21 @@ struct AdvertDetailView: View {
                     Text(item.advert.locationInfo.city)
                 })
                 
+               
+                HStack(content: {
+                    Button {
+                         UIPasteboard.general.string = item.advert.phoneNumber
+                    } label: {
+                        Image(systemName: ImageResourceConstants.copy.rawValue).foregroundColor(.primary)
+                    }
+
+                    Text("+\(item.advert.phoneNumber)")
+                })
+                
                 HStack{
                    Spacer()
                     subWalkerInfo(count: "\(viewModel.commentList.count)", text: TextConstants.comments.rawValue)
                     Spacer()
-                    //subWalkerInfo(count: "150", text: TextConstants.walks.rawValue)
-                   // Spacer()
                     subWalkerInfo(count: "$\(item.advert.perWage)", text:TextConstants.perHour.rawValue )
                     Spacer()
                 }
