@@ -23,7 +23,14 @@ struct AdvertsView: View {
                         ScrollView {
                             LazyVStack(content: {
                                 ForEach(viewModel.advertList,id: \.key) { (key, advert) in
-                                    AdvertLazyVStackTitle(item: (key: key, advert: advert))
+                                    NavigationLink {
+                                        AdvertDetailView(item: (key:key,advert:advert))
+                                    } label: {
+                                        AdvertLazyVStackTitle(item: (key: key, advert: advert))
+                                            .foregroundColor(.primary)
+                                    }
+
+                                    
                                 }
                             })
                         }

@@ -32,6 +32,7 @@ struct AdvertLazyVStackTitle: View {
                 Text(item.advert.info)
                     .font(.callout)
                     .lineLimit(3)
+                    .multilineTextAlignment(.leading)
             })
         }).padding()
     }

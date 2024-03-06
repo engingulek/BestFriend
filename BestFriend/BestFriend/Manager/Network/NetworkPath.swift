@@ -3,20 +3,23 @@ import Alamofire
 public enum NetworkPath {
     case dogWalking
     case sitting
+    case comments(String)
 }
 
 extension NetworkPath : TargetType {
     var baseURL: String {
-        return NetworkConstants.baseUrl.rawValue
+        return NetworkConstants.baseUrl
     }
     
     var path: String {
         switch self {
        
         case .dogWalking:
-            return NetworkConstants.dogWalkings.rawValue
+            return NetworkConstants.dogWalkings.path
         case .sitting:
-            return NetworkConstants.sittings.rawValue
+            return NetworkConstants.sittings.path
+        case .comments(let advertId):
+            return NetworkConstants.comments(advertId: advertId).path
         }
     }
     

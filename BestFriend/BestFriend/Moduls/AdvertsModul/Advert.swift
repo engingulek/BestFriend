@@ -17,6 +17,15 @@ struct AdvertValue: Decodable {
         case info, locationInfo, nameSurname, perWage
         case rating
     }
+    static let defaultAdvertValue : AdvertValue = .init(
+        imageURL: "",
+        info: "",
+        locationInfo: LocationInfo(
+            city: ""),
+        nameSurname: "",
+        perWage: 0,
+        rating: 0)
+    
 }
 
 // MARK: - LocationInfo
@@ -25,3 +34,4 @@ struct LocationInfo: Decodable {
 }
 
 typealias AdvertResult = [String: AdvertValue]
+

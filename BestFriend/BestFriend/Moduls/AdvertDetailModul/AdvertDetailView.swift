@@ -1,22 +1,24 @@
 import SwiftUI
 import Kingfisher
 struct AdvertDetailView: View {
+    var item : (key:String,advert:AdvertValue)
+    @ObservedObject private  var viewModel = AdvertDetailViewModel()
     var body: some View {
         ScrollView {
             VStack(alignment:.leading,spacing: 15){
-                KFImage(URL(string: "https://images.pexels.com/photos/868113/pexels-photo-868113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"))
+                KFImage(URL(string: item.advert.imageURL))
                     .resizable()
-                    .frame(width: .infinity,height: 400)
+                    .frame(width: 350,height: 400)
                     .cornerRadius(10)
                 
                 HStack(content: {
-                    Text("Jack Dan")
+                    Text(item.advert.nameSurname)
                         .font(.title)
                         .fontWeight(.semibold)
                     HStack(spacing:1,content: {
                         Image(systemName: ImageResourceConstants.starFill.rawValue)
                             .foregroundColor(.black)
-                        Text("4.5")
+                        Text(String(format: "%.1f", item.advert.rating))
                             .fontWeight(.semibold)
                             .foregroundColor(.black)
                     })
@@ -24,16 +26,16 @@ struct AdvertDetailView: View {
                 
                 HStack(content: {
                     Image(systemName: ImageResourceConstants.mappinAndEllipse.rawValue)
-                    Text("Bakırköy,Istanbul")
+                    Text(item.advert.locationInfo.city)
                 })
                 
                 HStack{
                    Spacer()
-                    subWalkerInfo(count: "60", text: TextConstants.reviews.rawValue)
+                    subWalkerInfo(count: "\(viewModel.comments.count)", text: TextConstants.reviews.rawValue)
                     Spacer()
-                    subWalkerInfo(count: "150", text: TextConstants.walks.rawValue)
-                    Spacer()
-                    subWalkerInfo(count: "$23", text:TextConstants.perHour.rawValue )
+                    //subWalkerInfo(count: "150", text: TextConstants.walks.rawValue)
+                   // Spacer()
+                    subWalkerInfo(count: "$\(item.advert.perWage)", text:TextConstants.perHour.rawValue )
                     Spacer()
                 }
                 
@@ -41,7 +43,7 @@ struct AdvertDetailView: View {
                     Text(TextConstants.bio.rawValue)
                         .font(.title2)
                         .fontWeight(.semibold)
-                    Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic ")
+                    Text(item.advert.info)
                 
                 })
              
@@ -60,6 +62,8 @@ struct AdvertDetailView: View {
                 })
             }.padding(.horizontal)
             
+        }.onAppear {
+            viewModel.onAppear(advertId: item.key)
         }
      
     }
@@ -83,5 +87,5 @@ private struct subWalkerInfo : View {
 }
 
 #Preview {
-    AdvertDetailView()
+    AdvertDetailView(item: (key:"key",advert:AdvertValue.defaultAdvertValue))
 }
