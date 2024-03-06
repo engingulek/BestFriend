@@ -1,22 +1,28 @@
 import SwiftUI
 import Kingfisher
+
+
 struct AdvertDetailView: View {
+    var item : (key:String,advert:AdvertValue)
+    @ObservedObject private  var viewModel = AdvertDetailViewModel()
+    
     var body: some View {
         ScrollView {
             VStack(alignment:.leading,spacing: 15){
-                KFImage(URL(string: "https://images.pexels.com/photos/868113/pexels-photo-868113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"))
+                KFImage(URL(string: item.advert.imageURL))
                     .resizable()
-                    .frame(width: .infinity,height: 400)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: UIScreen.main.bounds.height / 3)
                     .cornerRadius(10)
                 
                 HStack(content: {
-                    Text("Jack Dan")
+                    Text(item.advert.nameSurname)
                         .font(.title)
                         .fontWeight(.semibold)
                     HStack(spacing:1,content: {
                         Image(systemName: ImageResourceConstants.starFill.rawValue)
                             .foregroundColor(.black)
-                        Text("4.5")
+                        Text(String(format: "%.1f", item.advert.rating))
                             .fontWeight(.semibold)
                             .foregroundColor(.black)
                     })
@@ -24,16 +30,16 @@ struct AdvertDetailView: View {
                 
                 HStack(content: {
                     Image(systemName: ImageResourceConstants.mappinAndEllipse.rawValue)
-                    Text("Bakırköy,Istanbul")
+                    Text(item.advert.locationInfo.city)
                 })
                 
                 HStack{
                    Spacer()
-                    subWalkerInfo(count: "60", text: TextConstants.reviews.rawValue)
+                    subWalkerInfo(count: "\(viewModel.commentList.count)", text: TextConstants.comments.rawValue)
                     Spacer()
-                    subWalkerInfo(count: "150", text: TextConstants.walks.rawValue)
-                    Spacer()
-                    subWalkerInfo(count: "$23", text:TextConstants.perHour.rawValue )
+                    //subWalkerInfo(count: "150", text: TextConstants.walks.rawValue)
+                   // Spacer()
+                    subWalkerInfo(count: "$\(item.advert.perWage)", text:TextConstants.perHour.rawValue )
                     Spacer()
                 }
                 
@@ -41,25 +47,56 @@ struct AdvertDetailView: View {
                     Text(TextConstants.bio.rawValue)
                         .font(.title2)
                         .fontWeight(.semibold)
-                    Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic ")
+                    Text(item.advert.info)
                 
                 })
              
                 VStack(alignment:.leading,content: {
-                    Text( TextConstants.comments.rawValue)
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                    ScrollView {
-                        LazyVStack(spacing:20,content: {
-                            ForEach(1...10, id: \.self) { count in
-                                CommentLaztVStackTitle()
-                                  
+                   
+                        Text( TextConstants.comments.rawValue)
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                    
+                    
+                   
+                    if viewModel.commentList.isEmpty {
+                        VStack {
+                            Spacer()
+                            Text(viewModel.message)
+                                .font(.title3)
+                        }
+                    }else{
+                        
+                        
+                            Picker(TextConstants.sort.rawValue,selection: $viewModel.commentSortType) {
+                                ForEach(CommentSortType.allCases, id: \.self) { sortType in
+                                    Text(sortType .rawValue).tag(sortType )
+                                        .font(.subheadline)
+                                }
                             }
-                        })
+                            .pickerStyle(.segmented)
+                            .foregroundColor(.black)
+                            .onChange(of: viewModel.commentSortType) { oldValue, newValue in
+                                viewModel.sortComment()
+                            }
+                        
+                        ScrollView {
+                            LazyVStack(spacing:20,content: {
+                                ForEach(viewModel.commentList, id: \.key) { (key,commentValue) in
+                                    CommentLaztVStackTitle(item: (key: key, comment: commentValue))
+                                      
+                                }
+                            })
+                        }
                     }
+                   
                 })
             }.padding(.horizontal)
             
+        }
+        .navigationTitle(TextConstants.navTitleAdvertDetail.rawValue)
+        .onAppear {
+            viewModel.onAppear(advertId: item.key)
         }
      
     }
@@ -76,12 +113,14 @@ private struct subWalkerInfo : View {
             Text(text)
                 .font(.callout)
         }
+       
         .frame(width: 80,height: 80)
+        .padding(2)
         .background(Color.gray.opacity(0.3))
             .cornerRadius(10)
     }
 }
 
 #Preview {
-    AdvertDetailView()
+    AdvertDetailView(item: (key:"key",advert:AdvertValue.defaultAdvertValue))
 }
