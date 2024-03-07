@@ -6,8 +6,6 @@ enum CommentSortType : String, CaseIterable {
     case fromNewToOld = "From New To Old"
 }
 
-
-
 class AdvertDetailViewModel : ObservableObject{
     private var comments : [(key:String,value:CommentValue)] = []
     @Published var commentList : [(key:String,value:CommentValue)] = []
@@ -39,7 +37,6 @@ class AdvertDetailViewModel : ObservableObject{
     
    private func fetchComments(advertId:String) {
        Task{
-          
            do {
                
                let result = try await service.fetchComments(advertId: advertId)
@@ -55,9 +52,7 @@ class AdvertDetailViewModel : ObservableObject{
                        comments = comments.sorted(by: {$0.key < $1.key})
                        commentList = comments
                        message = ""
-                       
                    }
-                  
                }
 
            }catch{

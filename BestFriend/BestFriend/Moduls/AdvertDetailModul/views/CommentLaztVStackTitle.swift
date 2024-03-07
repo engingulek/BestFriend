@@ -23,9 +23,6 @@ struct CommentLaztVStackTitle: View {
         .padding()
         .background(Color.gray.opacity(0.3))
         .cornerRadius(RadiusConstant.small.rawValue)
-     
-
-            
     }
 }
 

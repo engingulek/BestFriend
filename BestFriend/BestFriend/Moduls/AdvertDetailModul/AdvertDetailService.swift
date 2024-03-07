@@ -17,7 +17,4 @@ class AdvertDetailService : AdvertDetailServiceProtocol {
             throw error
         }
     }
-    
-  
-    
 }

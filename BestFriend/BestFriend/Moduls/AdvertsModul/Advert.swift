@@ -3,8 +3,6 @@ import Foundation
 
 // MARK: - AdvertValue
 struct AdvertValue: Decodable {
- 
-    
     let imageURL: String
     let info: String
     let locationInfo: LocationInfo

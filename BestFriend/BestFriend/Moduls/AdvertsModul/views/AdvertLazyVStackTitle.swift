@@ -21,12 +21,9 @@ struct AdvertLazyVStackTitle: View {
                     Text("\(item.advert.locationInfo.city)")
                 })
                 
-                HStack(alignment:.center) {
-                    
+                HStack(alignment:.center) {                    
                     subWalkerInfo(image: ImageResourceConstants.starFill.rawValue, text: "\(item.advert.rating)")
-                    //subWalkerInfo(image: ImageResourceConstants.walk.rawValue , text: "50 walks")
                     subWalkerInfo(image: ImageResourceConstants.dollarsign.rawValue, text: "\(item.advert.perWage)/h")
-                    
                 }
                 
                 Text(item.advert.info)

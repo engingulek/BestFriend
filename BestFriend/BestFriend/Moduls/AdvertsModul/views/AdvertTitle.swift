@@ -40,12 +40,6 @@ struct AdvertHeader: View {
             .pickerStyle(.navigationLink)
             .foregroundColor(.black)
             
-           
-            
-           
-            
-            
-            
         }.padding()
     }
 }

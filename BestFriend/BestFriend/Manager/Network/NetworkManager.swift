@@ -9,7 +9,7 @@ enum NetworkError : Error {
     case noRequestResource
 }
 
- protocol NetworkManagerProtocol{
+protocol NetworkManagerProtocol{
     func request<T:Decodable>(
         target:NetworkPath,
         responseClass:T.Type) async throws -> T
@@ -19,9 +19,7 @@ final class NetworkManager : NetworkManagerProtocol  {
     
     static let shared :NetworkManagerProtocol  = NetworkManager()
     
-    init() {}
-    
-   func request<T:Decodable>(
+    func request<T:Decodable>(
         target: NetworkPath,
         responseClass: T.Type) async throws -> T  {
             
@@ -57,13 +55,13 @@ final class NetworkManager : NetworkManagerProtocol  {
         }
     
     
-      private func buildParams(requestType: RequestType) -> ([String: Any], ParameterEncoding) {
-           
-           switch requestType {
-           case .requestPlain:
-               return ([:], URLEncoding.default)
-           case .requestParameters(parameters: let parameters, encoding: let encoding):
-               return (parameters, encoding)
-           }
-       }
+    private func buildParams(requestType: RequestType) -> ([String: Any], ParameterEncoding) {
+        
+        switch requestType {
+        case .requestPlain:
+            return ([:], URLEncoding.default)
+        case .requestParameters(parameters: let parameters, encoding: let encoding):
+            return (parameters, encoding)
+        }
+    }
 }

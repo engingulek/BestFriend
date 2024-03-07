@@ -2,15 +2,12 @@ import SwiftUI
 
 struct AdvertsView: View {
     let advertType: AdvertsType
-
-    @ObservedObject private  var viewModel = AdvertsViewModel()
-    
-    
+    @ObservedObject   var viewModel = AdvertsViewModel()
     var body: some View {
         VStack {
             if viewModel.isLoading {
                 VStack{
-                    ProgressView("Loading...")
+                    ProgressView(TextConstants.loading.rawValue)
                         .font(.title)
                         .progressViewStyle(CircularProgressViewStyle())
                 }
@@ -29,8 +26,6 @@ struct AdvertsView: View {
                                         AdvertLazyVStackTitle(item: (key: key, advert: advert))
                                             .foregroundColor(.primary)
                                     }
-
-                                    
                                 }
                             })
                         }
@@ -42,17 +37,13 @@ struct AdvertsView: View {
                             Spacer()
                         })
                     }
-                  
                 }
             }
         }
         .navigationTitle(TextConstants.navTitleAdverts.rawValue)
-        
         .onAppear {
             viewModel.fetchData(advertType: advertType)
             viewModel.onAppear(advertType: advertType)
-            
-            
         }
     }
 }

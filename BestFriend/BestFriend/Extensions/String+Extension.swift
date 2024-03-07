@@ -8,6 +8,5 @@ extension String {
             return Date.now
         }
         return date
-        
     }
 }
